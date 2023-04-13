@@ -9,7 +9,7 @@ namespace la_mia_pizzeria_crud_mvc.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=pizzeriaDB;Integrated Security=True;Pooling=False;Encrypt=False;");
+            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=PizzaDb;Integrated Security=True;Pooling=False;Pooling=False;Encrypt=False;");
         }
         public void seed()
         {
@@ -40,8 +40,8 @@ namespace la_mia_pizzeria_crud_mvc.Models
                     },
                     new Pizza
                     {
-                        Name = "Mortadella e pistacchi",
-                        Description = "pomodoro, mozzarella, mortadella e pistacchi",
+                        Name = "Wustel e patatinre",
+                        Description = "pomodoro, mozzarella, wustel e patatine",
                         Foto = "/img/pizza04.webp",
                         Price = 8,
                     },
