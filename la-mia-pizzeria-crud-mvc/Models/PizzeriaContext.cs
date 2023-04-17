@@ -12,7 +12,7 @@ namespace la_mia_pizzeria_static.Models
         {
             optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=PizzaDb;Integrated Security=True;Pooling=False;Encrypt=False;");
         }
-        public void seed()
+        public void Seed()
         {
             var pizzaseed = new Pizza[]
             {
