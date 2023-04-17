@@ -28,5 +28,16 @@ namespace la_mia_pizzeria_static.Models
         [MoreThenZeroPrice]
         public int Price { get; set; }
         public object CategoriaId { get; internal set; }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Pizza pizza &&
+                   EqualityComparer<object>.Default.Equals(Categoria, pizza.Categoria);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Ingredients);
+        }
     }
 }
