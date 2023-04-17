@@ -4,6 +4,10 @@ namespace la_mia_pizzeria_static.Models
 {
     public class Categoria
     {
+        public Categoria()
+        {
+        }
+
         [Key]
         public long Id { get; set; }
 
