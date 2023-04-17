@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using la_mia_pizzeria_static.Models;
 using la_mia_pizzeria_crud_mvc.Models;
@@ -12,9 +13,11 @@ using la_mia_pizzeria_crud_mvc.Models;
 namespace la_mia_pizzeria_static.Migrations
 {
     [DbContext(typeof(PizzeriaContext))]
-    partial class PizzeriaContextModelSnapshot : ModelSnapshot
+    [Migration("20230414123533_IngredientTable")]
+    partial class IngredientTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,13 +28,13 @@ namespace la_mia_pizzeria_static.Migrations
 
             modelBuilder.Entity("IngredientePizza", b =>
                 {
-                    b.Property<int>("IngredientsId")
+                    b.Property<int>("IngridientsId")
                         .HasColumnType("int");
 
                     b.Property<int>("pizzasId")
                         .HasColumnType("int");
 
-                    b.HasKey("IngredientsId", "pizzasId");
+                    b.HasKey("IngridientsId", "pizzasId");
 
                     b.HasIndex("pizzasId");
 
@@ -70,7 +73,7 @@ namespace la_mia_pizzeria_static.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ingredients");
+                    b.ToTable("Ingridients");
                 });
 
             modelBuilder.Entity("la_mia_pizzeria_static.Models.Pizza", b =>
@@ -114,7 +117,7 @@ namespace la_mia_pizzeria_static.Migrations
                 {
                     b.HasOne("la_mia_pizzeria_static.Models.Ingrediente", null)
                         .WithMany()
-                        .HasForeignKey("IngredientsId")
+                        .HasForeignKey("IngridientsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

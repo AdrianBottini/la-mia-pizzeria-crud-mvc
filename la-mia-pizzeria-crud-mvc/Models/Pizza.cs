@@ -7,6 +7,8 @@ namespace la_mia_pizzeria_static.Models
 {
     public class Pizza
     {
+        internal object Categoria;
+        internal object Ingredients;
 
         public int Id { get; set; }
 
@@ -25,5 +27,6 @@ namespace la_mia_pizzeria_static.Models
         [Required(ErrorMessage = "Campo obbligatorio")]
         [MoreThenZeroPrice]
         public int Price { get; set; }
+        public object CategoriaId { get; internal set; }
     }
 }

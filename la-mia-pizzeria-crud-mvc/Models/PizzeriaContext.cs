@@ -6,6 +6,16 @@ namespace la_mia_pizzeria_crud_mvc.Models
     public class PizzeriaContext : DbContext
     {
         public DbSet<Pizza> Pizzas { get; set; }
+        public object Categories { get; internal set; }
+
+        public PizzeriaContext(object categories)
+        {
+            Categories = categories;
+        }
+
+        public PizzeriaContext()
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
