@@ -7,8 +7,6 @@ namespace la_mia_pizzeria_static.Models
 {
     public class Pizza
     {
-        internal object Categoria;
-        internal object Ingredients;
 
         public int Id { get; set; }
 
@@ -27,17 +25,13 @@ namespace la_mia_pizzeria_static.Models
         [Required(ErrorMessage = "Campo obbligatorio")]
         [MoreThenZeroPrice]
         public int Price { get; set; }
-        public object CategoriaId { get; internal set; }
 
-        public override bool Equals(object? obj)
+        public int? CategoriaId { get; set; }
+        public Categoria? Categoria { get; set; }
+        public List<Ingrediente> Ingredients { get; set; }
+        public Pizza()
         {
-            return obj is Pizza pizza &&
-                   EqualityComparer<object>.Default.Equals(Categoria, pizza.Categoria);
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Ingredients);
+            this.Ingredients = new List<Ingrediente>();
         }
     }
 }

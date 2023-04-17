@@ -1,5 +1,4 @@
-﻿using la_mia_pizzeria_crud_mvc.Models;
-using la_mia_pizzeria_static.Models;
+﻿using la_mia_pizzeria_static.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
